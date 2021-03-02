@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PhotoCell: UICollectionViewCell {
 
@@ -16,5 +17,7 @@ class PhotoCell: UICollectionViewCell {
     //MARK: - Setup
     func setupPhoto(_ photo: Photo) {
         titleLabel.text = photo.title
+        photoImageView.sd_setImage(with: URL(string: photo.url),
+                                   placeholderImage: UIImage(named: "placeholder"))
     }
 }
